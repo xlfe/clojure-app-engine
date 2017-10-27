@@ -55,7 +55,7 @@
   (if (not @myserver)
     (init-app-engine))
   (reset! myserver
-          (run-jetty (environment-decorator handler/app)
+          (run-jetty (environment-decorator #'handler/reload-handler)
                      {:port myport :join? false}))
   (.start @myserver))
 

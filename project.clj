@@ -5,10 +5,11 @@
                  [org.clojure/clojure "1.8.0"]
                  [ring "1.6.2"]
                  [com.google.appengine/appengine-api-1.0-sdk ~appengine-version]
+                 [liberator "0.15.1"]
                  [compojure "1.6.0"]
                  ]
   :plugins [[lein-ring "0.12.1" :exclusions [org.clojure/clojure]]]
-  :ring {:handler cae.core/app}
+  :ring {:handler cae.core/prod-handler}
   :profiles {:dev
              {
               :source-paths ["dev/"]
